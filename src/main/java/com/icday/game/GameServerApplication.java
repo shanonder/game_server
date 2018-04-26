@@ -20,10 +20,13 @@ public class GameServerApplication {
 
     @Autowired
     public void initDefault(){
-        User user = new User();
-        user.setUserName("admin");
-        user.setPassword("111111");
-        userService.addUser(user);
+        if(userService.getUserByUserName("admin") == null){
+            User user = new User();
+            user.setUserName("admin");
+            user.setPassword("111111");
+            userService.addUser(user);
+        }
+
     }
 
 }

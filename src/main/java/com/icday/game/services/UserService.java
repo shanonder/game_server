@@ -4,4 +4,5 @@ import com.icday.game.models.User;
 
 public interface UserService {
     int addUser(User user);
+    User getUserByUserName(String username);
 }
