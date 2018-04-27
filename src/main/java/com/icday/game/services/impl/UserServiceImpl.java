@@ -1,7 +1,7 @@
 package com.icday.game.services.impl;
 
-import com.icday.game.mappers.UserMapper;
-import com.icday.game.models.User;
+import com.icday.game.databases.mappers.UserMapper;
+import com.icday.game.databases.models.User;
 import com.icday.game.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

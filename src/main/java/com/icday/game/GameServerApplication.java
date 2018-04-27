@@ -1,6 +1,6 @@
 package com.icday.game;
 
-import com.icday.game.models.User;
+import com.icday.game.databases.models.User;
 import com.icday.game.services.UserService;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.icday.game.mappers")
+@MapperScan("com.icday.game.databases.mappers")
 public class GameServerApplication {
 
     public static void main(String[] args) {
@@ -28,5 +28,7 @@ public class GameServerApplication {
         }
 
     }
+
+
 
 }

@@ -1,6 +1,6 @@
-package com.icday.game.mappers;
+package com.icday.game.databases.mappers;
 
-import com.icday.game.models.User;
+import com.icday.game.databases.models.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(String id);

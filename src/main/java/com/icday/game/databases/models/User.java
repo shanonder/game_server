@@ -1,4 +1,4 @@
-package com.icday.game.models;
+package com.icday.game.databases.models;
 
 public class User {
     private String id;
@@ -6,6 +6,8 @@ public class User {
     private String userName;
 
     private String password;
+
+    private Byte antiAddiction;
 
     public String getId() {
         return id;
@@ -29,5 +31,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
+    }
+
+    public Byte getAntiAddiction() {
+        return antiAddiction;
+    }
+
+    public void setAntiAddiction(Byte antiAddiction) {
+        this.antiAddiction = antiAddiction;
     }
 }

@@ -2,29 +2,65 @@ server:
   port: 8080
 
 spring:
-    datasource:
-        name: db_game
-        url: jdbc:mysql://127.0.0.1:3306/db_game?useSSL=false
-        username: root
-        password:
-        type: com.alibaba.druid.pool.DruidDataSource
-        driver-class-name: com.mysql.jdbc.Driver
-        filters: stat
-        maxActive: 20
-        initialSize: 1
-        maxWait: 60000
-        minIdle: 1
-        timeBetweenEvictionRunsMillis: 60000
-        minEvictableIdleTimeMillis: 300000
-        validationQuery: select 'x'
-        testWhileIdle: true
-        testOnBorrow: false
-        testOnReturn: false
-        poolPreparedStatements: true
-        maxOpenPreparedStatements: 20
+  datasource:
+    name: db_game
+    url: jdbc:mysql://127.0.0.1:3306/db_game?useSSL=false
+    username: root
+    password:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+  redis:
+    database: 5
+    host: 127.0.0.1
+#    password:
+    port: 7001
+    timeout: 3000ms
+    pool:
+      max-idle: 500
+      min-idle: 50
+      max-active: 2000
+      max-wait: 1000
+
+#
+#        spring.redis.database=5
+#        spring.redis.host=19.29.80.50
+#        spring.redis.password=admin.1231
+#        spring.redis.port=7001
+#        # 连接超时时间 单位 ms（毫秒）
+#        spring.redis.timeout=3000
+#
+#        #################redis线程池设置#################
+#        # 连接池中的最大空闲连接，默认值也是8。
+#        spring.redis.pool.max-idle=500
+#        #连接池中的最小空闲连接，默认值也是0。
+#        spring.redis.pool.min-idle=50
+#        # 如果赋值为-1，则表示不限制；如果pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)。
+#        spring.redis.pool.max-active=2000
+#        # 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException
+#        spring.redis.pool.max-wait=1000
+#
+#        #################redis哨兵设置#################
+#        # Redis服务器master的名字
+#        #spring.redis.sentinel.master=master8026
+#        # redis-sentinel的配置地址和端口
+#        #spring.redis.sentinel.nodes=10.189.80.25:26379,10.189.80.26:26379,10.189.80.27:26378
+
 mybatis:
   mapper-locations: classpath:mapping/*.xml
-  type-aliases-package: com.icday.game.models
+  type-aliases-package: com.icday.game.databases.models
 
 
 wws:
